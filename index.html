@@ -4,10 +4,22 @@
         <meta charset="UTF-8">
 
         <style>
-            table {
+            #textArea  {
                 width: 100%;
                 height: 100%;
             }
+
+            .head{
+                background: beige;
+
+            }
+            .output {
+                border:  2px solid black;
+                width: 150px;
+                height: 20px;
+            }
+
+
 
             .textAreaWrapper {
                 width: 100%;
@@ -21,7 +33,7 @@
         </style>
     </head>
     <body>
-        <table>
+        <table id="textArea">
             <tr>
                 <td>
                     <div>
@@ -56,6 +68,18 @@
                 </td>
             </tr>
         </table>
+
+        <div id="div1">
+            <table id="output_table">
+                <tr >
+                    <td class="output head">Line</td>
+                    <td class="output head">Type</td>
+                    <td class="output head">Name</td>
+                    <td class="output head">Condition</td>
+                    <td class="output head">Value</td>
+                </tr>
+            </table>
+        </div>
 
         <script src="dist/bundle.js"></script>
     </body>

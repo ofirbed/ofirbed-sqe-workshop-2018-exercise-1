@@ -1,10 +1,40 @@
 import $ from 'jquery';
-import {parseCode} from './code-analyzer';
+import {getElementbyNumber, parseCode} from './code-analyzer';
+
+
 
 $(document).ready(function () {
     $('#codeSubmissionButton').click(() => {
-        let codeToParse = $('#codePlaceholder').val();
-        let parsedCode = parseCode(codeToParse);
-        $('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
+        var codeToParse = $('#codePlaceholder').val();
+        let array_to_display = parseCode(codeToParse);
+        DisplayTable(array_to_display);
+        //$('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
     });
 });
+
+function convertUndefinedToEmptyString (str){
+    if (str === undefined) return '';
+    return str;
+}
+
+
+function DisplayTable(elementsArr) {
+    //var div1 = document.getElementById('div1');
+    var tbl = document.getElementById('output_table');
+
+
+    for (var r = 0; r < elementsArr.length; r++) {
+        var row = document.createElement('tr');
+
+        for (var c = 0; c < 5; c++) {
+            var cell = document.createElement('td');
+            cell.className = 'output';
+            var cellText = document.createTextNode(convertUndefinedToEmptyString(getElementbyNumber(elementsArr[r],c+1)));
+            cell.appendChild(cellText);
+            row.appendChild(cell);}
+
+        tbl.appendChild(row);}
+
+    // div1.appendChild(tbl);
+}
+
