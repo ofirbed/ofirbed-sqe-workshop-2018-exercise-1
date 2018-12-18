@@ -150,6 +150,11 @@ function CreateVarDecDataObject(VarDec) {
     obj.line = VarDec.id.loc.start.line;
     obj.type = VarDec.type;
     obj.name = VarDec.id.name;
+    if(VarDec.init !== null) {
+        let lRange = VarDec.init.range[0];
+        let rRange = VarDec.init.range[1];
+        obj.value = inputCode.substring(lRange, rRange);
+    }
     return obj;
 }
 

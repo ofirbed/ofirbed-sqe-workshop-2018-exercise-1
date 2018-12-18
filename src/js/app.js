@@ -8,7 +8,7 @@ $(document).ready(function () {
         var codeToParse = $('#codePlaceholder').val();
         let array_to_display = parseCode(codeToParse);
         DisplayTable(array_to_display);
-        //$('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
+        // $('#parsedCode').val(JSON.stringify(array_to_display, null, 2));
     });
 });
 
@@ -34,6 +34,20 @@ function DisplayTable(elementsArr) {
             row.appendChild(cell);}
 
         tbl.appendChild(row);}
+
+
+    // var paragraph = document.createElement("p");
+    // var linebreak = document.createElement("br");
+    //     do{
+    //     while(char !='\n''){
+    //         text=text.append(char);
+    //         char.next();
+    //         }
+    //         lineText = document.createTextNode(text)
+    //         paragraph.appendChild(lineText);
+    //         paragraph.appendChild(linebreak)
+    //
+    //     }while(char == null);
 
     // div1.appendChild(tbl);
 }

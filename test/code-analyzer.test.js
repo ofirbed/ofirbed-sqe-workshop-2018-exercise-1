@@ -17,7 +17,8 @@ describe('Create Data Objects Tests', () => {
         assert.equal(
             CreateVarDecDataObject({
                 type: 'VariableDeclarator',
-                id: {loc: {start: {line: 1}},name: 'str'}
+                id: {loc: {start: {line: 1}},name: 'str'},
+                init:null
             }).toString(),
             {type: 'VariableDeclarator', line: 1, name: 'func1'}.toString()
         );});});
